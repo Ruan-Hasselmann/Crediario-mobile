@@ -11,7 +11,10 @@ class UserList extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Lista de Clientes'),
+          title: Text('Lista de Clientes'),
+          actions: <Widget>[
+            IconButton(onPressed: () {}, icon: Icon(Icons.add))
+          ],
         ),
         body: ListView.builder(
           itemCount: users.length,
