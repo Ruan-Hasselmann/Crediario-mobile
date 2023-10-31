@@ -1,4 +1,5 @@
 import 'package:appcrediario/models/user.dart';
+import 'package:appcrediario/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class UserTile extends StatelessWidget {
@@ -15,17 +16,29 @@ class UserTile extends StatelessWidget {
     return ListTile(
       leading: avatar,
       title: Text(user.nome),
+      subtitle: Text(user.id),
       trailing: Container(
-        width: 100,
+        width: 145,
         child: Row(
           children: <Widget>[
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.USER_FORM,
+                  arguments: user,
+                );
+              },
               icon: Icon(Icons.edit),
               color: Colors.yellow,
             ),
             IconButton(
-                onPressed: () {}, icon: Icon(Icons.delete), color: Colors.red)
+                onPressed: () {},
+                icon: Icon(Icons.attach_money),
+                color: Colors.green),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.add_shopping_cart),
+                color: Colors.cyan)
           ],
         ),
       ),

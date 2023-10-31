@@ -1,4 +1,6 @@
 import 'package:appcrediario/provider/users.dart';
+import 'package:appcrediario/routes/app_routes.dart';
+import 'package:appcrediario/views/user_form.dart';
 import 'package:appcrediario/views/user_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +25,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity),
-        home: const UserList(),
+        routes: {
+          AppRoutes.HOME: (_) => const UserList(),
+          AppRoutes.USER_FORM: (_) => UserForm()
+        },
       ),
     );
   }
